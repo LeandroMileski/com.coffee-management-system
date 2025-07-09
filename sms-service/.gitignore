@@ -1,0 +1,131 @@
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+# Project-specific files
+
+# Java and Spring Boot
+*.class
+*.jar
+*.war
+*.ear
+target/
+!**/src/main/**/target/
+!**/src/test/**/target/
+*.log
+logs/
+
+# Maven
+.mvn/
+mvnw
+mvnw.cmd
+pom.xml.versionsBackup
+pom.xml.releaseBackup
+release.properties
+dependency-reduced-pom.xml
+
+# IDEs and Editors
+.idea/
+*.iws
+.classpath
+.project
+.settings/
+.springBeans
+.sts4-cache
+.vscode/
+*.code-workspace
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# Sensitive configuration files
+application-prod.yml
+application-prod.properties
+.env
+*.p12
+*.jks
+*.keystore
+*.truststore
+*.key
+*.pem
+*.crt
+*.secret
+secrets/
+
+# Database files
+*.db
+*.sql
+*.sqlite
+*.h2.db
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+*.lock
+
+# Test and runtime files
+*.pid
+*.seed
+*.rdb
+coverage/
+test-output/
+
+# Dependency directories
+lib/
+libs/
+node_modules/
+
+# Logs (including production logs from application-prod.yml)
+/var/log/coffee-shop/
+log/
+*.log.*
+
+# Docker
+Dockerfile.local
+docker-compose.local.yml
+*.dockerignore
+
+# CI/CD
+.circleci/
+.github/workflows/*.local.yml
+.gitlab-ci.yml.local
+*.tfstate
+*.tfstate.backup
+
+# OS-specific files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,16 @@
+# Development Configuration
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+aws:
+  sns:
+    region: us-east-1
+    access-key: dev-access-key
+    secret-key: dev-secret-key
+logging:
+  level:
+    com.coffeeshop.sms: DEBUG
+    software.amazon.awssdk: DEBUG

@@ -1,0 +1,71 @@
+# Server Configuration
+server:
+  port: 8081
+
+# Spring Configuration
+spring:
+  application:
+    name: email-service
+  
+  # Email Configuration
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${EMAIL_USERNAME:your-email@gmail.com}
+    password: ${EMAIL_PASSWORD:your-app-password}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          ssl:
+            trust: smtp.gmail.com
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000
+    default-encoding: UTF-8
+  
+  # Thymeleaf Configuration
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    cache: false  # Set to true in production
+  
+  # RabbitMQ Configuration
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USER:guest}
+    password: ${RABBITMQ_PASSWORD:guest}
+    listener:
+      simple:
+        acknowledge-mode: auto
+        concurrency: 1
+        max-concurrency: 3
+
+# Email Configuration (Custom Properties)
+email:
+  from: ${EMAIL_FROM:noreply@coffeeshop.com}
+  templates:
+    welcome: welcome-email
+    order-confirmation: order-confirmation-email
+  retry:
+    max-attempts: 3
+    delay: 2000
+
+# RabbitMQ Configuration
+rabbitmq:
+  queues:
+    user-registration: user.registration.queue
+  exchanges:
+    user-events: user.events.exchange
+
+# Logging
+logging:
+  level:
+    com.coffeeshop.email: INFO
+    org.springframework.mail: DEBUG

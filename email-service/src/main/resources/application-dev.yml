@@ -1,0 +1,16 @@
+# Development Configuration
+spring:
+  mail:
+    host: smtp.mailtrap.io
+    port: 2525
+    username: your-mailtrap-username
+    password: your-mailtrap-password
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+logging:
+  level:
+    com.coffeeshop.email: DEBUG
+    org.springframework.mail: DEBUG

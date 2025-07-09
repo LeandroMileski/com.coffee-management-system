@@ -1,0 +1,50 @@
+# Server Configuration
+server:
+  port: 8082
+
+# Spring Configuration
+spring:
+  application:
+    name: sms-service
+  
+  # RabbitMQ Configuration
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USER:guest}
+    password: ${RABBITMQ_PASSWORD:guest}
+    listener:
+      simple:
+        acknowledge-mode: auto
+        concurrency: 1
+        max-concurrency: 3
+
+# AWS Configuration (Custom Properties)
+aws:
+  sns:
+    region: ${AWS_REGION:us-east-1}
+    access-key: ${AWS_ACCESS_KEY:your-access-key}
+    secret-key: ${AWS_SECRET_KEY:your-secret-key}
+  credentials:
+    access-key: ${AWS_ACCESS_KEY:your-access-key}
+    secret-key: ${AWS_SECRET_KEY:your-secret-key}
+
+# SMS Configuration (Custom Properties)
+sms:
+  default-country-code: ${DEFAULT_COUNTRY_CODE:+1}
+  retry:
+    max-attempts: 3
+    delay: 1000
+
+# RabbitMQ Configuration
+rabbitmq:
+  queues:
+    order-status-update: order.status.update.queue
+  exchanges:
+    order-events: order.events.exchange
+
+# Logging
+logging:
+  level:
+    com.coffeeshop.sms: INFO
+    software.amazon.awssdk: DEBUG
