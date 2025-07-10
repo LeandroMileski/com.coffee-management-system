@@ -38,6 +38,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 auth.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                 SecurityContextHolder.getContext().setAuthentication(auth);
             }
+            else {
+                // If token is invalid, clear the security context
+                SecurityContextHolder.clearContext();
+            }
         }
         chain.doFilter(request, response);
     }
