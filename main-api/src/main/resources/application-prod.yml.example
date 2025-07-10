@@ -1,0 +1,27 @@
+# Production Configuration
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_NAME}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    hikari:
+      maximum-pool-size: 50
+      minimum-idle: 10
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+  rabbitmq:
+    host: ${RABBITMQ_HOST}
+    port: ${RABBITMQ_PORT}
+    username: ${RABBITMQ_USER}
+    password: ${RABBITMQ_PASSWORD}
+jwt:
+  secret: ${JWT_SECRET}
+  expiration: 86400000  # 24 hours
+logging:
+  level:
+    com.coffeeshop: INFO
+    org.springframework.security: WARN
+  file:
+    name: /var/log/coffee-shop/main-api.log
