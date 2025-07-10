@@ -28,6 +28,5 @@ public class AuthController {
         // Getters and setters
         private String username;
         private String password;
-
     }
 }
