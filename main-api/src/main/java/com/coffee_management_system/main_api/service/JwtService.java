@@ -13,10 +13,6 @@ import java.util.Date;
 public class JwtService {
     private final JwtProperties jwtProperties;
 
-    public JwtService(JwtProperties jwtProperties) {
-        this.jwtProperties = jwtProperties;
-    }
-
     public String generateToken(String username) {
         return Jwts.builder()
                 .setSubject(username)

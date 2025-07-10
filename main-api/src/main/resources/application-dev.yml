@@ -14,9 +14,9 @@ spring:
     username: guest
     password: guest
 jwt:
-  secret: dev-secret-key-not-for-production
+  secret: jbBPt/gT9n3NRZCn9Vj4ptqIv0VAyB4KvNkWfo707MKR5ZWx6wL/giDHQa191P72XfbXWmWuOe1Us8DcgX9u2w==
   expiration: 3600000  # 1 hour
 logging:
   level:
-    com.coffeeshop: DEBUG
+    com.coffee_management_system: DEBUG
     org.springframework.security: DEBUG
